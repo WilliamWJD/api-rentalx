@@ -1,5 +1,7 @@
 import { Category } from "../model/Category";
-import ICategoriesRepository from "./ICategoriesRepository";
+import ICategoriesRepository, {
+    ICreateCategoryDTO,
+} from "./ICategoriesRepository";
 
 class PostgresCategoriesRepository implements ICategoriesRepository {
     findByName(name: string): Category {
@@ -10,7 +12,7 @@ class PostgresCategoriesRepository implements ICategoriesRepository {
         throw new Error("Method not implemented");
     }
 
-    create(name: string, description: string): void {
+    create({ name, description }: ICreateCategoryDTO): void {
         throw new Error("Method not implemented");
     }
 }
