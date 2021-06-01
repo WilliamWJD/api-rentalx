@@ -4,5 +4,9 @@
     "port":"5432",
     "username":"postgres",
     "password":"wilb12m02",
-    "database":"rentx-db"
+    "database":"rentx-db",
+    "migrations":["./src/database/migrations/*.ts"],
+    "cli":{
+        "migrationsDir":"./src/database/migrations"
+    }
 }
