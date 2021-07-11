@@ -23,6 +23,12 @@ class CreateUserUseCase {
         email,
         driver_license,
     }: IRequest): Promise<void> {
+        const userAlreadyExists = await this.userRepository.findByEmail(email);
+
+        if (userAlreadyExists) {
+            throw new Error("User already exists");
+        }
+
         await this.userRepository.create({
             name,
             password: await hash(password, 8),
