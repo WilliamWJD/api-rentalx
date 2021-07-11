@@ -1,3 +1,4 @@
+import { hash } from "bcrypt";
 import { inject, injectable } from "tsyringe";
 
 import IUserRepository from "../../repositories/IUserRepository";
@@ -24,7 +25,7 @@ class CreateUserUseCase {
     }: IRequest): Promise<void> {
         await this.userRepository.create({
             name,
-            password,
+            password: await hash(password, 8),
             email,
             driver_license,
         });
