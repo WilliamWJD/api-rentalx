@@ -10,6 +10,6 @@ const router = Router();
 router.use("/categories", categorieRoutes);
 router.use("/specifications", specificationsRoutes);
 router.use("/users", usersRoutes);
-router.use("/authenticate", authenticateRoutes);
+router.use("/users", authenticateRoutes);
 
 export { router };
