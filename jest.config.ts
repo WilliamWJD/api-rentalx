@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { pathsToModuleNameMapper } from "ts-jest/utils";
 
 import { compilerOptions } from "./tsconfig.json";
@@ -134,7 +135,7 @@ export default {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    // setupFilesAfterEnv: ["<rootDir>/jest.config.ts"],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
